@@ -1,0 +1,149 @@
+                                                                                
+┌──(mahdi㉿hasan)-[~/app]
+└─$ wget https://http.kali.org/pool/main/l/linux/linux-headers-5.15.0-kali3-amd64_5.15.15-1kali2_amd64.deb
+--2022-04-08 23:26:28--  https://http.kali.org/pool/main/l/linux/linux-headers-5.15.0-kali3-amd64_5.15.15-1kali2_amd64.deb
+Resolving http.kali.org (http.kali.org)... 192.99.200.113
+Connecting to http.kali.org (http.kali.org)|192.99.200.113|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://mirror.pyratelan.org/kali/pool/main/l/linux/linux-headers-5.15.0-kali3-amd64_5.15.15-1kali2_amd64.deb [following]
+--2022-04-08 23:26:30--  https://mirror.pyratelan.org/kali/pool/main/l/linux/linux-headers-5.15.0-kali3-amd64_5.15.15-1kali2_amd64.deb
+Resolving mirror.pyratelan.org (mirror.pyratelan.org)... 148.251.242.167, 2a01:4f8:271:25cd::167
+Connecting to mirror.pyratelan.org (mirror.pyratelan.org)|148.251.242.167|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1636384 (1.6M) [application/octet-stream]
+Saving to: ‘linux-headers-5.15.0-kali3-amd64_5.15.15-1kali2_amd64.deb’
+
+linux-headers-5.15. 100%[===================>]   1.56M  1.04MB/s    in 1.5s    
+
+2022-04-08 23:26:32 (1.04 MB/s) - ‘linux-headers-5.15.0-kali3-amd64_5.15.15-1kali2_amd64.deb’ saved [1636384/1636384]
+
+                                                                                
+┌──(mahdi㉿hasan)-[~/app]
+└─$ ls
+linux-headers-5.15.0-kali3-amd64_5.15.15-1kali2_amd64.deb
+                                                                                
+┌──(mahdi㉿hasan)-[~/app]
+└─$ sudo su
+[sudo] password for mahdi: 
+┌──(root㉿hasan)-[/home/mahdi/app]
+└─# dpkg -i linux-headers-5.15.0-kali3-amd64_5.15.15-1kali2_amd64.deb
+Selecting previously unselected package linux-headers-5.15.0-kali3-amd64.
+(Reading database ... 409406 files and directories currently installed.)
+Preparing to unpack linux-headers-5.15.0-kali3-amd64_5.15.15-1kali2_amd64.deb ...
+Unpacking linux-headers-5.15.0-kali3-amd64 (5.15.15-1kali2) ...
+dpkg: dependency problems prevent configuration of linux-headers-5.15.0-kali3-amd64:
+ linux-headers-5.15.0-kali3-amd64 depends on linux-headers-5.15.0-kali3-common (= 5.15.15-1kali2); however:
+  Package linux-headers-5.15.0-kali3-common is not installed.
+ linux-headers-5.15.0-kali3-amd64 depends on linux-kbuild-5.15 (>= 5.15.15-1kali2); however:
+  Package linux-kbuild-5.15 is not installed.
+
+dpkg: error processing package linux-headers-5.15.0-kali3-amd64 (--install):
+ dependency problems - leaving unconfigured
+Errors were encountered while processing:
+ linux-headers-5.15.0-kali3-amd64
+                                                                                
+┌──(root㉿hasan)-[/home/mahdi/app]
+└─# ls                                                               
+linux-headers-5.15.0-kali3-amd64_5.15.15-1kali2_amd64.deb
+                                                                                
+┌──(root㉿hasan)-[/home/mahdi/app]
+┌──(root㉿hasan)-[/home/mahdi/app]
+└─# wget https://http.kali.org/pool/main/l/linux/linux-headers-5.15.0-kali3-common_5.15.15-1kali2_all.deb   
+
+--2022-04-08 23:29:46--  https://http.kali.org/pool/main/l/linux/linux-headers-5.15.0-kali3-common_5.15.15-1kali2_all.deb
+Resolving http.kali.org (http.kali.org)... 192.99.200.113
+Connecting to http.kali.org (http.kali.org)|192.99.200.113|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://archive-4.kali.org/kali/pool/main/l/linux/linux-headers-5.15.0-kali3-common_5.15.15-1kali2_all.deb [following]
+--2022-04-08 23:29:47--  https://archive-4.kali.org/kali/pool/main/l/linux/linux-headers-5.15.0-kali3-common_5.15.15-1kali2_all.deb
+Resolving archive-4.kali.org (archive-4.kali.org)... 176.31.228.102
+Connecting to archive-4.kali.org (archive-4.kali.org)|176.31.228.102|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 9887092 (9.4M) [application/octet-stream]
+Saving to: ‘linux-headers-5.15.0-kali3-common_5.15.15-1kali2_all.deb’
+
+linux-headers-5.15.0-kali3-c 100%[============================================>]   9.43M  99.4KB/s    in 73s     
+
+2022-04-08 23:31:02 (131 KB/s) - ‘linux-headers-5.15.0-kali3-common_5.15.15-1kali2_all.deb’ saved [9887092/9887092]
+
+                                                                                                                  
+┌──(root㉿hasan)-[/home/mahdi/app]
+└─# ls
+linux-headers-5.15.0-kali3-common_5.15.15-1kali2_all.deb
+                                                                                                                  
+┌──(root㉿hasan)-[/home/mahdi/app]
+└─# dpkg -i linux-headers-5.15.0-kali3-common_5.15.15-1kali2_all.deb                                     
+Selecting previously unselected package linux-headers-5.15.0-kali3-common.
+(Reading database ... 415702 files and directories currently installed.)
+Preparing to unpack linux-headers-5.15.0-kali3-common_5.15.15-1kali2_all.deb ...
+Unpacking linux-headers-5.15.0-kali3-common (5.15.15-1kali2) ...
+Setting up linux-headers-5.15.0-kali3-common (5.15.15-1kali2) ...
+                                                                                                                  
+┌──(root㉿hasan)-[/home/mahdi/app]
+└─# wget https://http.kali.org/pool/main/l/linux/linux-kbuild-5.15_5.15.15-1kali2_amd64.deb
+
+--2022-04-08 23:34:26--  https://http.kali.org/pool/main/l/linux/linux-kbuild-5.15_5.15.15-1kali2_amd64.deb
+Resolving http.kali.org (http.kali.org)... 192.99.200.113
+Connecting to http.kali.org (http.kali.org)|192.99.200.113|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://mirror.anquan.cl/kali/pool/main/l/linux/linux-kbuild-5.15_5.15.15-1kali2_amd64.deb [following]
+--2022-04-08 23:34:27--  https://mirror.anquan.cl/kali/pool/main/l/linux/linux-kbuild-5.15_5.15.15-1kali2_amd64.deb
+Resolving mirror.anquan.cl (mirror.anquan.cl)... 186.107.125.30
+Connecting to mirror.anquan.cl (mirror.anquan.cl)|186.107.125.30|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1366076 (1.3M) [application/octet-stream]
+Saving to: ‘linux-kbuild-5.15_5.15.15-1kali2_amd64.deb’
+
+linux-kbuild-5.15_5.15.15-1k 100%[============================================>]   1.30M   510KB/s    in 2.6s    
+
+2022-04-08 23:34:32 (510 KB/s) - ‘linux-kbuild-5.15_5.15.15-1kali2_amd64.deb’ saved [1366076/1366076]
+
+                                                                                                                  
+┌──(root㉿hasan)-[/home/mahdi/app]
+└─# ls
+linux-headers-5.15.0-kali3-common_5.15.15-1kali2_all.deb  linux-kbuild-5.15_5.15.15-1kali2_amd64.deb
+                                                                                                                  
+┌──(root㉿hasan)-[/home/mahdi/app]
+└─# dpkg -i linux-kbuild-5.15_5.15.15-1kali2_amd64.deb                                     
+Selecting previously unselected package linux-kbuild-5.15.
+(Reading database ... 425458 files and directories currently installed.)
+Preparing to unpack linux-kbuild-5.15_5.15.15-1kali2_amd64.deb ...
+Unpacking linux-kbuild-5.15 (5.15.15-1kali2) ...
+Setting up linux-kbuild-5.15 (5.15.15-1kali2) ...
+                                                                                                                  
+┌──(root㉿hasan)-[/home/mahdi/app]
+└─# wget https://http.kali.org/pool/main/l/linux/linux-headers-5.15.0-kali3-amd64_5.15.15-1kali2_amd64.deb
+
+--2022-04-08 23:37:47--  https://http.kali.org/pool/main/l/linux/linux-headers-5.15.0-kali3-amd64_5.15.15-1kali2_amd64.deb
+Resolving http.kali.org (http.kali.org)... 192.99.200.113
+Connecting to http.kali.org (http.kali.org)|192.99.200.113|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://ftp.halifax.rwth-aachen.de/kali/pool/main/l/linux/linux-headers-5.15.0-kali3-amd64_5.15.15-1kali2_amd64.deb [following]
+--2022-04-08 23:37:48--  https://ftp.halifax.rwth-aachen.de/kali/pool/main/l/linux/linux-headers-5.15.0-kali3-amd64_5.15.15-1kali2_amd64.deb
+Resolving ftp.halifax.rwth-aachen.de (ftp.halifax.rwth-aachen.de)... 137.226.34.46, 2a00:8a60:e012:a00::21
+Connecting to ftp.halifax.rwth-aachen.de (ftp.halifax.rwth-aachen.de)|137.226.34.46|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1636384 (1.6M) [application/octet-stream]
+Saving to: ‘linux-headers-5.15.0-kali3-amd64_5.15.15-1kali2_amd64.deb’
+
+linux-headers-5.15.0-kali3-a 100%[============================================>]   1.56M   812KB/s    in 2.0s    
+
+2022-04-08 23:37:51 (812 KB/s) - ‘linux-headers-5.15.0-kali3-amd64_5.15.15-1kali2_amd64.deb’ saved [1636384/1636384]
+
+                                                                                                                  
+┌──(root㉿hasan)-[/home/mahdi/app]
+└─# ls
+linux-headers-5.15.0-kali3-amd64_5.15.15-1kali2_amd64.deb  linux-kbuild-5.15_5.15.15-1kali2_amd64.deb
+linux-headers-5.15.0-kali3-common_5.15.15-1kali2_all.deb
+                                                                                                                  
+┌──(root㉿hasan)-[/home/mahdi/app]
+└─# dpkg -i linux-headers-5.15.0-kali3-amd64_5.15.15-1kali2_amd64.deb                                     
+(Reading database ... 425526 files and directories currently installed.)
+Preparing to unpack linux-headers-5.15.0-kali3-amd64_5.15.15-1kali2_amd64.deb ...
+Unpacking linux-headers-5.15.0-kali3-amd64 (5.15.15-1kali2) over (5.15.15-1kali2) ...
+Setting up linux-headers-5.15.0-kali3-amd64 (5.15.15-1kali2) ...
+/etc/kernel/header_postinst.d/dkms:
+dkms: running auto installation service for kernel 5.15.0-kali3-amd64:.
+                                                                                                                  
+┌──(root㉿hasan)-[/home/mahdi/app]
+└─# 
